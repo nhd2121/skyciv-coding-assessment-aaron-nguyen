@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>SkyCiv Coding Task</title>
+
+        <!-- JQUERY (REQUIRED FOR SEMANTIC)-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <!-- SEMANTIC UI -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js" integrity="sha512-Xo0Jh8MsOn72LGV8kU5LsclG7SUzJsWGhXbWcYs2MAmChkQzwiW/yTQwdJ8w6UA9C6EVG18GHb/TrYpYCjyAQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css" integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      
+        <link rel="stylesheet" href="/css/main.css" />
+        
+        <script src="/js/packages/skyciv_pack.min.js"></script>
+        <script src="/js/packages/skyciv_pack_2.min.js"></script>
+    </head>
+    <body>
+
+        <h1>Simple Beam Tool</h1>
+        <div class="ui grid">
+            <div class="eight wide column">
+
+                <h3>Beam Diagram</h3>
+                <div id="beam-svg"></div>
+
+                <h3>Beam Inputs</h3>
+                <div class="ui small message"> 
+                    <div class="header"> Note </div>
+                    <p> Please adjust this form as you wish </p>
+                </div>
+                <form class="ui form" id="beam-form">
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Distributed Load (kN/m)</label>
+                            <input type="number" name="length" value="40">
+                        </div>
+                        <div class="field">
+                            <label>Point Load (kN)</label>
+                            <input type="number" name="load" required value="6">
+                        </div>
+                    </div>
+                    <button class="ui button" type="submit">Calculate Results</button>
+                </form>
+            </div>
+            <div class="eight wide column">
+                <div class="ui small message"> 
+                    <div class="header"> Requirements </div>
+                    <ul>
+                        <li>Use the provided beam diagram, you can redesign the inputs</li>
+                        <li>Call the SkyCiv API to analyze the beam from your backend</li>
+                        <li>Display the results in a user-friendly manner</li>
+                        <li>Fetch template input data from /data/input.json</li>
+                        <li>Challenge: Can you add a displacement results graph</li>
+                        <li>Comment and explain your code decisions</li>
+                    </ul>
+                </div>
+                <div class="ui small message"> 
+                    <div class="header"> Hints </div>
+                   <ul>
+                        <li>Leave the beam diagram as is; it is not expected that you adjust this.</li>
+                        <li>You can adjust the layout of the page to showcase your frontend development skills.</li>
+                        <li>Think about the UI/UX of the results panel. What extra features could you include to improve this tool? You may take this as far as you like, but we don't expect you to spend more than 2 hours on this at most 😊</li>
+                   </ul>
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/index.js"></script>
+    </body>
+</html>

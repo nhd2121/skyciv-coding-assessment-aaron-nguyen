@@ -1,0 +1,12 @@
+{
+    "L": 1000,
+    "support_a": "Pinned",
+    "support_b": "Pinned",
+    "DL_mag": 40,
+    "PL_mag": 6,
+    "PL_dist": 500,
+    "calculate_deflection": true,
+    "E": 200000,
+    "I_z": 220000000,
+    "uid": "1011-simple-beam-analysis-calculator"
+}
