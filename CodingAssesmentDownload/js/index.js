@@ -19,9 +19,8 @@ document.addEventListener("DOMContentLoaded", async function () {
   updateFormInputs();
 });
 
-/**
- * Load input data from the server's JSON file
- */
+//Load input data from the server's JSON file
+
 async function loadInputData() {
   try {
     const response = await fetch("/data/input.json");
@@ -44,18 +43,14 @@ async function loadInputData() {
   }
 }
 
-/**
- * Update the beam diagram visualization
- */
+// Beam diagram visualization
 function updateBeamDiagram() {
   const width = document.getElementById("beam-svg").clientWidth;
   const height = 0.6 * width;
   buildBeamDiagram("beam-svg", input_data, height, width);
 }
 
-/**
- * Update form inputs with current input_data values
- */
+// Form inputs with current input_data values
 function updateFormInputs() {
   document.querySelector('input[name="distributed_load"]').value =
     input_data.DL_mag;
@@ -65,9 +60,7 @@ function updateFormInputs() {
   document.querySelector('input[name="beam_length"]').value = input_data.L;
 }
 
-/**
- * Setup form submission handler
- */
+// Setup form submission handler
 function setupFormHandler() {
   const form = document.getElementById("beam-form");
 
@@ -138,9 +131,7 @@ function setupFormHandler() {
   });
 }
 
-/**
- * Validate user inputs
- */
+// Validate user inputs
 function validateInputs() {
   // Check if point load position is within beam length
   if (input_data.PL_dist > input_data.L) {
@@ -162,9 +153,7 @@ function validateInputs() {
   return true;
 }
 
-/**
- * Display analysis results in a formatted table
- */
+// Display analysis results in a formatted table
 function displayResults(results) {
   const resultsContainer = document.getElementById("results-container");
 
@@ -291,9 +280,7 @@ function displayResults(results) {
   resultsContainer.style.display = "block";
 }
 
-/**
- * Create displacement graph using Chart.js
- */
+// Create displacement graph using Chart.js
 function createDisplacementGraph(displacementArray, beamLength) {
   // Show graph container
   const graphContainer = document.getElementById("graph-container");
@@ -367,9 +354,7 @@ function createDisplacementGraph(displacementArray, beamLength) {
   });
 }
 
-/**
- * Show/hide loading indicator
- */
+// Show/hide loading indicator
 function showLoading(show) {
   const button = document.querySelector('#beam-form button[type="submit"]');
   if (show) {
@@ -381,9 +366,8 @@ function showLoading(show) {
   }
 }
 
-/**
- * Show message to user
- */
+//Show message to user
+
 function showMessage(message, type) {
   const messageDiv = document.getElementById("message-container");
 

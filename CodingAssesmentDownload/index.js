@@ -47,7 +47,7 @@ app.post("/api/analyze", async (req, res) => {
 
     // Check different possible response structures
     if (data) {
-      // SkyCiv returns status: 0 for success with data.results
+      // Returns status: 0 for success with data.results
       if (data.status === 0 && data.data && data.data.results) {
         // Extract the actual values from the results
         const rawResults = data.data.results;
