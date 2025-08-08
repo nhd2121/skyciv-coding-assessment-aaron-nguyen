@@ -26,7 +26,6 @@ async function loadInputData() {
   try {
     const response = await fetch("/data/input.json");
     input_data = await response.json();
-    console.log("Input data loaded:", input_data);
   } catch (error) {
     console.error("Error loading input data:", error);
     // Use default values if loading fails

@@ -1,21 +1,23 @@
 # SkyCiv Coding Test
 
-## Setup
-
-Install and run the express server. The landing page should be at http://localhost:3000
-
 ## How to start
 
-Install and run the express server:
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Create a `.env` file in the root directory with the following:
 
-- npm i
-- npm start
+- SKYCIV_AUTH=qd@skyciv.com
+- SKYCIV_KEY=eJJQX516y4vygq1Qe1w6acsjY8nudFh0AcTPG7bsrdvsgijXLNZhDMwKF4XwemAq
+- SKYCIV_UID=1011-simple-beam-analysis-calculator
+
+4. Run the application: `npm start`
+5. Open browser at `http://localhost:3000`
 
 ## Technology
 
 - Node/Express Backend
-- JS/HTML (welcome to use jQuery or vanilla JS - up to you)
-- Semantic UI [https://semantic-ui.com/] - (this is a commonly used library in our tech stack, please keep it)
+- JS/HTML (vanilla JS)
+- Semantic UI [https://semantic-ui.com/]
 
 ## API Notes
 
@@ -59,12 +61,3 @@ Please include these results in your results table. We have added descriptions t
 | max_displacement   | Max Displacement           | —               | mm    | Maximum displacement                        |
 | displacement_array | Displacement Results Array | —               | —     | Maybe this could be used to create a graph? |
 | span_ratio         | Span Ratio                 | —               | —     | Span length ratio                           |
-
-## Optional Extra Tasks
-
-- Add the ability to compare two results for different requests
-- Allow the user to adjust other input (length, point load location)
-
-## Help
-
-If you have any questions about this task, please feel free to email: jake.roeleven@skyciv.com

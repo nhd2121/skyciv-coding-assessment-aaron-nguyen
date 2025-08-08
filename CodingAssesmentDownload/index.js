@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const fs = require("fs");
+require("dotenv").config();
 
 // Middleware to parse JSON bodies
 app.use(express.json());
@@ -22,18 +23,15 @@ app.post("/api/analyze", async (req, res) => {
   try {
     // Get input data from request body
     const inputData = req.body;
-    console.log("Received input data:", inputData);
 
     // Prepare payload for SkyCiv API
     const payload = {
-      uid: "1011-simple-beam-analysis-calculator",
-      auth: "qd@skyciv.com",
-      key: "eJJQX516y4vygq1Qe1w6acsjY8nudFh0AcTPG7bsrdvsgijXLNZhDMwKF4XwemAq",
+      uid: process.env.SKYCIV_UID,
+      auth: process.env.SKYCIV_AUTH,
+      key: process.env.SKYCIV_KEY,
       input: inputData,
       calcs_only: true,
     };
-
-    console.log("Sending payload to SkyCiv:", JSON.stringify({ payload }));
 
     // Make request to SkyCiv API
     const response = await fetch("https://qd.skyciv.com/run", {
@@ -44,11 +42,8 @@ app.post("/api/analyze", async (req, res) => {
       body: JSON.stringify({ payload }),
     });
 
-    console.log("SkyCiv API response status:", response.status);
-
     // Parse response
     const data = await response.json();
-    console.log("SkyCiv API response data:", JSON.stringify(data, null, 2));
 
     // Check different possible response structures
     if (data) {
